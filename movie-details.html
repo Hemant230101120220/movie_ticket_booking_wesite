@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - MovieTix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .movie-details-container {
+            margin-top: 60px;
+            padding: var(--spacing-lg);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .movie-hero {
+            position: relative;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            margin: -2rem -2rem 2rem -2rem;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-end;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+        }
+
+        .movie-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+        }
+
+        .movie-info-container {
+            display: flex;
+            gap: var(--spacing-lg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .movie-poster img {
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .movie-info {
+            flex: 1;
+        }
+
+        .movie-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .movie-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .movie-rating {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .movie-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .trailer-container {
+            margin: var(--spacing-lg) 0;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .trailer-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .movie-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .detail-section {
+            background: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+        }
+
+        .cast-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+
+        .cast-member {
+            text-align: center;
+        }
+
+        .cast-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: var(--spacing-xs);
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .movie-info-container {
+                flex-direction: column;
+            }
+
+            .movie-poster img {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .movie-hero {
+                height: auto;
+                padding-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-film"></i>
+                <span>MovieTix</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Movies</a>
+            <a href="#">Theaters</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </div>
+        <div class="nav-auth">
+            <button class="btn-secondary">Sign In</button>
+        </div>
+    </nav>
+
+    <div class="movie-details-container">
+        <div class="movie-hero">
+            <div class="movie-info-container">
+                <div class="movie-poster">
+                    <!-- Movie poster will be inserted here -->
+                </div>
+                <div class="movie-info">
+                    <h1 class="movie-title"><!-- Movie title will be inserted here --></h1>
+                    <div class="movie-meta">
+                        <!-- Movie metadata will be inserted here -->
+                    </div>
+                    <div class="movie-rating">
+                        <!-- Rating will be inserted here -->
+                    </div>
+                    <p class="movie-synopsis">
+                        <!-- Synopsis will be inserted here -->
+                    </p>
+                    <div class="movie-actions">
+                        <a href="#" class="btn-primary book-now">Book Tickets</a>
+                        <button class="btn-secondary watch-trailer">Watch Trailer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trailer-container">
+            <img src="https://picsum.photos/1200/675" alt="Movie Trailer Thumbnail">
+            <i class="fas fa-play-circle play-button"></i>
+        </div>
+
+        <div class="movie-details">
+            <div class="detail-section">
+                <h2>Cast & Crew</h2>
+                <div class="cast-list">
+                    <!-- Cast members will be inserted here -->
+                </div>
+            </div>
+            <div class="detail-section">
+                <h2>Details</h2>
+                <div class="movie-details-info">
+                    <!-- Movie details will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock movie data
+        const movieDetails = {
+            id: 1,
+            title: "The Dark Knight Returns",
+            genre: "Action",
+            duration: "2h 45m",
+            rating: 4.8,
+            releaseDate: "2025",
+            director: "Christopher Nolan",
+            language: "English",
+            ageRating: "PG-13",
+            poster: "https://picsum.photos/300/450",
+            backdrop: "https://picsum.photos/1200/675",
+            synopsis: "In this thrilling conclusion to the Dark Knight trilogy, Batman must face his greatest challenge yet as he confronts a mysterious new villain threatening Gotham City.",
+            cast: [
+                { name: "Christian Bale", role: "Bruce Wayne / Batman", image: "https://picsum.photos/100/100" },
+                { name: "Michael Caine", role: "Alfred", image: "https://picsum.photos/100/100" },
+                { name: "Gary Oldman", role: "Commissioner Gordon", image: "https://picsum.photos/100/100" },
+                { name: "Anne Hathaway", role: "Selina Kyle", image: "https://picsum.photos/100/100" }
+            ]
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const movieId = params.get('movieId');
+            
+            // Set movie details
+            document.querySelector('.movie-hero').style.backgroundImage = `url(${movieDetails.backdrop})`;
+            document.querySelector('.movie-poster').innerHTML = `
+                <img src="${movieDetails.poster}" alt="${movieDetails.title}">
+            `;
+            document.querySelector('.movie-title').textContent = movieDetails.title;
+            document.querySelector('.movie-meta').innerHTML = `
+                <span>${movieDetails.genre}</span>
+                <span>${movieDetails.duration}</span>
+                <span>${movieDetails.language}</span>
+                <span>${movieDetails.releaseDate}</span>
+                <span>${movieDetails.ageRating}</span>
+            `;
+            document.querySelector('.movie-rating').innerHTML = `
+                ${'★'.repeat(Math.floor(movieDetails.rating))}${'☆'.repeat(5-Math.floor(movieDetails.rating))}
+                <span style="margin-left: 8px;">${movieDetails.rating}/5</span>
+            `;
+            document.querySelector('.movie-synopsis').textContent = movieDetails.synopsis;
+
+            // Set cast members
+            const castList = document.querySelector('.cast-list');
+            castList.innerHTML = movieDetails.cast.map(member => `
+                <div class="cast-member">
+                    <img src="${member.image}" alt="${member.name}">
+                    <h4>${member.name}</h4>
+                    <p style="color: var(--text-secondary);">${member.role}</p>
+                </div>
+            `).join('');
+
+            // Set movie details
+            document.querySelector('.movie-details-info').innerHTML = `
+                <p><strong>Director:</strong> ${movieDetails.director}</p>
+                <p><strong>Genre:</strong> ${movieDetails.genre}</p>
+                <p><strong>Duration:</strong> ${movieDetails.duration}</p>
+                <p><strong>Language:</strong> ${movieDetails.language}</p>
+                <p><strong>Release Date:</strong> ${movieDetails.releaseDate}</p>
+                <p><strong>Age Rating:</strong> ${movieDetails.ageRating}</p>
+            `;
+
+            // Setup book now button
+            document.querySelector('.book-now').href = `booking.html?movieId=${movieId || 1}`;
+
+            // Setup trailer button
+            document.querySelector('.watch-trailer').addEventListener('click', () => {
+                alert('Trailer functionality will be implemented here');
+            });
+
+            // Setup play button
+            document.querySelector('.play-button').addEventListener('click', () => {
+                alert('Trailer functionality will be implemented here');
+            });
+        });
+    </script>
+</body>
+</html>

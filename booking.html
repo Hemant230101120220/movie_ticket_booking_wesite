@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - MovieTix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-film"></i>
+                <span>MovieTix</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Movies</a>
+            <a href="#">Theaters</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </div>
+        <div class="nav-auth">
+            <button class="btn-secondary">Sign In</button>
+        </div>
+    </nav>
+
+    <main class="booking-container">
+        <div class="movie-details">
+            <div class="movie-poster">
+                <!-- Poster will be dynamically inserted -->
+            </div>
+            <div class="movie-info">
+                <h1 class="movie-title"><!-- Title will be dynamically inserted --></h1>
+                <div class="movie-meta">
+                    <!-- Movie metadata will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <div class="date-picker">
+                <h3>Select Date</h3>
+                <div class="date-slots">
+                    <!-- Date slots will be dynamically inserted -->
+                </div>
+            </div>
+
+            <div class="time-picker">
+                <h3>Select Time</h3>
+                <div class="time-slots">
+                    <!-- Time slots will be dynamically inserted -->
+                </div>
+            </div>
+
+            <div class="theater-picker">
+                <h3>Select Theater</h3>
+                <select id="theater-select">
+                    <option value="">Choose a theater</option>
+                    <!-- Theater options will be dynamically inserted -->
+                </select>
+            </div>
+
+            <div class="seat-layout">
+                <h3>Select Seats</h3>
+                <div class="screen">Screen</div>
+                <div class="seats-container">
+                    <!-- Seats will be dynamically inserted -->
+                </div>
+                <div class="seat-legend">
+                    <div class="legend-item">
+                        <div class="seat available"></div>
+                        <span>Available</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat selected"></div>
+                        <span>Selected</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat booked"></div>
+                        <span>Booked</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="seat vip"></div>
+                        <span>VIP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+                <div class="summary-details">
+                    <!-- Summary details will be dynamically inserted -->
+                </div>
+                <div class="total-amount">
+                    <span>Total Amount:</span>
+                    <span class="amount">$0.00</span>
+                </div>
+                <button class="btn-primary proceed-payment" disabled>Proceed to Payment</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="booking.js"></script>
+</body>
+</html>

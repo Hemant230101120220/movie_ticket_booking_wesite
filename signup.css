@@ -1,0 +1,79 @@
+/* Additional styles for sign up page */
+.signup-box {
+    max-width: 450px;
+}
+
+.terms-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.terms-check label {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.terms-check a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.password-strength {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.password-strength ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.password-strength li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.password-strength li.valid {
+    color: var(--success-color);
+}
+
+.password-strength li i {
+    font-size: 0.75rem;
+}
+
+/* Password strength meter */
+.strength-meter {
+    height: 4px;
+    background-color: #ddd;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-meter-fill {
+    height: 100%;
+    width: 0;
+    background-color: var(--error-color);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-meter-fill.weak {
+    width: 33.33%;
+    background-color: var(--error-color);
+}
+
+.strength-meter-fill.medium {
+    width: 66.66%;
+    background-color: #ffa500;
+}
+
+.strength-meter-fill.strong {
+    width: 100%;
+    background-color: var(--success-color);
+}
